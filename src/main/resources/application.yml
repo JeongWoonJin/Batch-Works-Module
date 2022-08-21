@@ -1,0 +1,15 @@
+app:
+  archive:
+    fiveMinute: 1
+    oneHour: 2
+    sixHours: 3
+    oneDay: 4
+  batch:
+    ipList: [ "101.79.244.11", "112.175.62.15", "101.79.245.35", "101.79.245.83", "119.205.216.172", "101.79.242.61", "119.205.216.173", "222.122.206.89", "101.79.244.59", "175.124.225.59", "175.158.11.166", "175.158.11.167" ]
+    port: 6666
+    # 경로 : 리턴 값(avg, max, sum) : 저장명
+    fieldList: [ "cpu-*/cpu-idle.rrd/value : avg : cpu-idle", "memory/memory-free.rrd/value : avg : memory-free", "interface/if_octets-em*.rrd/rx : avg : octets_rx", "interface/if_octets-em*.rrd/tx : avg : octets_tx" ] #, "load/load.rrd/longterm : sum : load_long_term" 추가해봄
+    collectCycle: "0/30 * * * * ?"
+    deleteCycle: "0 0/1 * * * ?"
+    ttl: 300
+    saveDir: "c:/Users/정운진/Desktop/data/" #저장 경로 설정
